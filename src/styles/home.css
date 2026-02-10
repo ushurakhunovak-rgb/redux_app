@@ -1,4 +1,6 @@
-/* В файле home.css или в глобальном стиле */
+/* src/styles/Home.css */
+
+/* Глобальные темы (применяются ко всему body) */
 body.light {
     background-color: #ffffff;
     color: #000000;
@@ -9,45 +11,138 @@ body.dark {
     color: #ffffff;
 }
 
-/* Стили для header в разных темах */
-body.light .header {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ccc;
+/* Основной контейнер главной страницы */
+.home.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-body.dark .header {
-    background-color: #2d2d2d;
-    border-bottom: 1px solid #444;
+/* Заголовки */
+h2, h3 {
+    margin-bottom: 1.2rem;
 }
 
-body.light .footer {
-    background-color: #f8f9fa;
-    border-top: 1px solid #ccc;
+h2 {
+    font-size: 2rem;
 }
 
-body.dark .footer {
-    background-color: #2d2d2d;
-    border-top: 1px solid #444;
+h3 {
+    font-size: 1.5rem;
 }
 
-/* Стили для кнопки темы */
-body.light .theme-btn {
-    background-color: #f0f0f0;
-    color: #333;
-    border: 1px solid #ccc;
+/* Секция постов */
+.posts-section {
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    border-radius: 10px;
 }
 
-body.dark .theme-btn {
-    background-color: #444;
-    color: #fff;
-    border: 1px solid #666;
+body.light .posts-section {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
 }
 
-/* Стили для ссылок */
-body.light a {
-    color: #0066cc;
+body.dark .posts-section {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
 }
 
-body.dark a {
-    color: #66b3ff;
+/* Список постов */
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.post-card {
+    padding: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+body.light .post-card {
+    background-color: white;
+    border-color: #e0e0e0;
+}
+
+body.dark .post-card {
+    background-color: #333;
+    border-color: #555;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+body.light .post-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body.dark .post-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Активный (выбранный) пост */
+.post-card.active {
+    border-color: #007bff;
+}
+
+body.light .post-card.active {
+    background-color: #e7f3ff;
+}
+
+body.dark .post-card.active {
+    background-color: #0d47a1;
+    border-color: #4da6ff;
+}
+
+/* Детали поста (раскрывающиеся) */
+.post-detail {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+body.light .post-detail {
+    background-color: #f0f8ff;
+    border-left: 4px solid #007bff;
+}
+
+body.dark .post-detail {
+    background-color: #1e3a5f;
+    border-left: 4px solid #4da6ff;
+    color: #e0e0e0;
+}
+
+/* Состояния загрузки и ошибки */
+.loading {
+    font-style: italic;
+    color: #888;
+    padding: 1rem 0;
+}
+
+body.dark .loading {
+    color: #aaa;
+}
+
+.error {
+    color: #d32f2f;
+    padding: 1rem 0;
+    font-weight: 500;
+}
+
+body.dark .error {
+    color: #ff6b6b;
+}
+
+/* Дополнительно: улучшение текста приветствия */
+.home p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
